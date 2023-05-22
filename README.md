@@ -1,2 +1,2 @@
 # LeetCode
-Solution for gfg questions
+Solutions for GFG questions
