@@ -29,8 +29,7 @@ class Solution {
     // function to return sum of  1, 2, ... n
     long seriesSum(int n) {
         long a = (long) n;
-        long ans = a*(a+1);
-        return ans/2;
+        return a*(a+1)/2;
         
         
     }
