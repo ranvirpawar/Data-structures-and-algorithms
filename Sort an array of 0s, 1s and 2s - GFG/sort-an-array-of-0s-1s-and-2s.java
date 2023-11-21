@@ -10,31 +10,33 @@ import java.util.*;
 
 class Solution
 {
-    public static void sort012(int nums[], int n)
+    public static void sort012(int a[], int n)
     {
-        // code here 
-        int i = 0;
-        int nextZero = 0;
-        int nextTwo = n-1;
-        while( i <= nextTwo){
-            if (nums[i] == 0){
-                int temp = nums[nextZero];
-                nums[nextZero] = nums[i];
-                nums[i]= temp;
+        int i=0;
+        int nextZero =0;
+        int nextTwo =n-1;
+        
+        while(i<=nextTwo)
+        {
+            if(a[i] == 0){
+                int temp = a[nextZero];
+                a[nextZero]= a[i];
+                a[i] = temp;
                 i++;
                 nextZero++;
-            } else if ( nums[i] == 2){
-                int temp = nums[nextTwo];
-                nums[nextTwo] = nums[i];
-                nums[i] = temp;
-               // i++;
-                nextTwo--;
-            }else{
-                i++;
+            }else if (a[i] == 2){
+                    int temp = a[nextTwo];
+                    a[nextTwo] = a[i];
+                    a[i] = temp;
+                    nextTwo--;
+                } 
+                else{
+                    i++;
             }
         }
     }
 }
+
 
 //{ Driver Code Starts.
 
