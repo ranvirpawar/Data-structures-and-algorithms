@@ -45,6 +45,7 @@ class Solution {
     {
         int newarr[] = new int [n];
         int j =0;
+        // copying positive to new arr
         for(int i=0; i<n; i++){
             if(arr[i] > 0){
             newarr[j] = arr[i];
@@ -52,12 +53,14 @@ class Solution {
             }
             
         }
+        //copying negative to new array
         for(int i=0; i<n; i++){
             if(arr[i] <  0){
             newarr[j] = arr[i];
             j++;
             }
         }
+        // copying new arr to original
         for(int i=0; i<n; i++){
             arr[i] = newarr[i];
         }
