@@ -54,30 +54,14 @@ class Solution{
     public static int doUnion(int a[], int n, int b[], int m) 
     {
         //Your code here
-        // ArrayList<Integer> list = new ArrayList<>();
-        // for(int i=0; i<a.length; i++){
-        //     list.add(a[i]);
-        // }
-        // for(int i=0; i<m; i++){
-        //     if(!list.contains(b[i])){
-        //         list.add(b[i]);
-        //     }
-        // }
-        
-        
-        // return list.size();
-        
-        // ??taking too much time 
-        
-        HashSet<Integer> set = new HashSet<>();
-        for(int i=0; i<n; i++){
-            set.add(a[i]);
+        HashSet <Integer> set = new HashSet<>();
+        for(int i : a){
+            set.add(i);
         }
-        for(int i=0; i<m; i++){
-            set.add(b[i]);
+        for(int i : b){
+            set.add(i);
+            
         }
-        
         return set.size();
-        
     }
 }
