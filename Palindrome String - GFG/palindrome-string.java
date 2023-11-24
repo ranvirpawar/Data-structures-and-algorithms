@@ -26,11 +26,13 @@ class Solution {
     int isPalindrome(String S) {
         // code here
         int n = S.length();
-        
-        for(int i=0 ; i<n/2; i++){
-            
-            if(S.charAt(i) != S.charAt(n-i-1)){
+        if( n%2 != 0){
+            return 0;
+        }
+        for(int i=0; i<n/2; i++){
+            if(S.charAt(i) != S.charAt(n-1-i)){
                 return 0;
+                //return false;
             }
         }
         return 1;
