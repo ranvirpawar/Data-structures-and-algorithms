@@ -36,37 +36,45 @@ class Solution
     //Function to return a list of integers denoting spiral traversal of matrix.
     static ArrayList<Integer> spirallyTraverse(int matrix[][], int r, int c)
     {
-        
-        ArrayList <Integer> list = new ArrayList <>();
-        int startRow = 0;
-        int endRow = matrix.length-1;
-        int startCol = 0;
-        int endCol = matrix[0].length-1;
-
-        while(startRow <= endRow && startCol <= endCol){
-            for(int j=startCol;j<=endCol;j++){
-            list.add(matrix[startRow][j]);
-            }
-            for(int i=startRow+1;i<=endRow;i++){
-                list.add(matrix[i][endCol]);
-            }
-            for(int j=endCol-1;j>=startCol;j--){
-                if(startRow == endRow){
-                    break;
-                }
-                list.add(matrix[endRow][j]);
-            }
-            for(int i=endRow-1;i>startRow;i--){
-                if(startCol == endCol){
-                    break;
-                }
-                list.add(matrix[i][startCol]);
-            }
+       ArrayList <Integer> list = new ArrayList<>();
+       
+       int startRow = 0;
+       int endRow = matrix.length-1;
+       int startCol =0;
+       int endCol = matrix[0].length-1;
+       
+       while( startRow <= endRow && startCol <= endCol){
+           
+           // adding top Row 
+           
+           for(int i=startCol; i<= endCol; i++){
+               list.add(matrix[startRow][i]);
+           }
+           startRow++;
+           
+           // adding right column;
+           
+           for(int i=startRow; i<=endRow; i++){
+               list.add(matrix[i][endCol]);
+           }
+           endCol--;
+           
+           // adding bottom row
+           if(startRow <= endRow){
+           for(int i=endCol; i>=startCol; i--){
+               list.add(matrix[endRow][i]);
+           }}
+           endRow--;
+           
+           
+           // adding left Col
+           if(startCol <= endCol){
+           for(int i=endRow; i>=startRow; i--){
+               list.add(matrix[i][startCol]);
+           }}
             startCol++;
-            endCol--;
-            startRow++;
-            endRow--;
+           
         }
-    return list;
+        return list;
     }
 }
